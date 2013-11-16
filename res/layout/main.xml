@@ -38,13 +38,46 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="30dip" />
+
+
     </RelativeLayout>    
+    
+        <RelativeLayout
+        android:id="@+id/AudioButtonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/StartButtonLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dip"
+            android:padding="10dip"
+            android:text="@string/audio"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ToggleButton
+            android:id="@+id/StartAudioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dip" />
+
+
+    </RelativeLayout>  
+    
+    
     
     <RelativeLayout
         android:id="@+id/ActivityLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/StartButtonLayout"
+        android:layout_below="@id/AudioButtonLayout"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:padding="5dip" >
@@ -132,10 +165,41 @@
     </RelativeLayout>
     
     <RelativeLayout
+        android:id="@+id/StatusAudioLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/StatusLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dip"
+            android:padding="10dip"
+            android:text="@string/speechStatus"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/StatusAudioView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dip"
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+    <RelativeLayout
         android:id="@+id/AccelLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/StatusLayout"
+        android:layout_below="@id/StatusAudioLayout"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:padding="5dip" >

@@ -7,6 +7,8 @@
  	<!-- Strings shown in UI  -->  
     <string name="status">Status</string>
     <string name="accel">Accelerometer</string>
+    <string name="audio">Microphone</string>
+    <string name="speechStatus">Speech Status</string>
     <string name="activity">Activity</string>
     <string name="steps">Steps</string>
     <string name="nullvalue">&#8212;.&#8212;&#8212;</string>

@@ -57,7 +57,7 @@ public class MainActivity extends Activity{
 	 * Various UI components 
 	 */
 	private TextView accelXView, accelYView, accelZView;
-	private TextView statusView, stepsView;
+	private TextView statusView, stepsView, statusAudioView;
 	private ImageView activityView;
 	private CompoundButton accelButton;
 	private Button vizButton;
@@ -164,12 +164,14 @@ public class MainActivity extends Activity{
         
         //Setting up text views
         statusView = (TextView) findViewById(R.id.StatusView);
+        statusAudioView = (TextView) findViewById(R.id.StatusAudioView);
         stepsView = (TextView) findViewById(R.id.StepCountView);
         activityView = (ImageView) findViewById(R.id.ActivityImageView);
         accelXView = (TextView) findViewById(R.id.AccelXView);
         accelYView = (TextView) findViewById(R.id.AccelYView);
         accelZView = (TextView) findViewById(R.id.AccelZView);
         statusView.setText("Service Not Bound");
+        statusAudioView.setText("Service Not Bound");
         
         
         vizButton = (Button) findViewById(R.id.VizualizeButton);

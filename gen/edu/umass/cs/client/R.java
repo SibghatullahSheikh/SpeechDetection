@@ -19,27 +19,31 @@ public final class R {
         public static final int walk=0x7f020005;
     }
     public static final class id {
-        public static final int AccelLayout=0x7f06000a;
-        public static final int AccelXView=0x7f06000c;
-        public static final int AccelYView=0x7f06000e;
-        public static final int AccelZView=0x7f060010;
-        public static final int ActivityImageView=0x7f060005;
-        public static final int ActivityLayout=0x7f060004;
-        public static final int RecordButton=0x7f060014;
-        public static final int RecordButtonLayout=0x7f060013;
+        public static final int AccelLayout=0x7f06000e;
+        public static final int AccelXView=0x7f060010;
+        public static final int AccelYView=0x7f060012;
+        public static final int AccelZView=0x7f060014;
+        public static final int ActivityImageView=0x7f060007;
+        public static final int ActivityLayout=0x7f060006;
+        public static final int AudioButtonLayout=0x7f060004;
+        public static final int RecordButton=0x7f060018;
+        public static final int RecordButtonLayout=0x7f060017;
+        public static final int StartAudioButton=0x7f060005;
         public static final int StartButton=0x7f060003;
         public static final int StartButtonLayout=0x7f060002;
-        public static final int StatusLayout=0x7f060008;
-        public static final int StatusView=0x7f060009;
-        public static final int StepCountView=0x7f060007;
-        public static final int StepsLayout=0x7f060006;
+        public static final int StatusAudioLayout=0x7f06000c;
+        public static final int StatusAudioView=0x7f06000d;
+        public static final int StatusLayout=0x7f06000a;
+        public static final int StatusView=0x7f06000b;
+        public static final int StepCountView=0x7f060009;
+        public static final int StepsLayout=0x7f060008;
         public static final int TopHorizontalSpaceView=0x7f060001;
-        public static final int VisualizeButtonLayout=0x7f060011;
-        public static final int VizualizeButton=0x7f060012;
-        public static final int XView=0x7f06000b;
-        public static final int YView=0x7f06000d;
-        public static final int ZView=0x7f06000f;
-        public static final int action_pick=0x7f060015;
+        public static final int VisualizeButtonLayout=0x7f060015;
+        public static final int VizualizeButton=0x7f060016;
+        public static final int XView=0x7f06000f;
+        public static final int YView=0x7f060011;
+        public static final int ZView=0x7f060013;
+        public static final int action_pick=0x7f060019;
         public static final int root=0x7f060000;
     }
     public static final class layout {
@@ -51,25 +55,27 @@ public final class R {
     }
     public static final class string {
         public static final int accel=0x7f040005;
-        public static final int action_pick=0x7f04000d;
-        public static final int activity=0x7f040006;
+        public static final int action_pick=0x7f04000f;
+        public static final int activity=0x7f040008;
         public static final int app_name=0x7f040000;
-        public static final int data_collect=0x7f04000e;
+        public static final int audio=0x7f040006;
+        public static final int data_collect=0x7f040010;
         public static final int drive=0x7f040003;
-        public static final int nullvalue=0x7f040008;
-        public static final int record=0x7f04000f;
-        public static final int speech=0x7f040011;
+        public static final int nullvalue=0x7f04000a;
+        public static final int record=0x7f040011;
+        public static final int speech=0x7f040013;
+        public static final int speechStatus=0x7f040007;
         public static final int stat=0x7f040002;
         /**  Strings shown in UI  
          */
         public static final int status=0x7f040004;
-        public static final int status_speech=0x7f040012;
-        public static final int steps=0x7f040007;
-        public static final int stop=0x7f040010;
-        public static final int visualize=0x7f04000c;
+        public static final int status_speech=0x7f040014;
+        public static final int steps=0x7f040009;
+        public static final int stop=0x7f040012;
+        public static final int visualize=0x7f04000e;
         public static final int walk=0x7f040001;
-        public static final int x=0x7f040009;
-        public static final int y=0x7f04000a;
-        public static final int z=0x7f04000b;
+        public static final int x=0x7f04000b;
+        public static final int y=0x7f04000c;
+        public static final int z=0x7f04000d;
     }
 }
