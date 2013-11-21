@@ -74,6 +74,12 @@ public class Context_Service extends Service implements SensorEventListener{
 	static final int MSG_STOP_ACCELEROMETER = 7;
 	static final int MSG_ACCELEROMETER_STARTED = 8;
 	static final int MSG_ACCELEROMETER_STOPPED = 9;
+	static final int MSG_START_MICROPHONE = 10;
+	static final int MSG_STOP_MICROPHONE = 11;
+	static final int MSG_MICROPHONE_STARTED = 12;
+	static final int MSG_MICROPHONE_STOPPED = 13;
+	static final int MSG_SPEECH_STATUS = 14;
+	
 
 	
 	static Context_Service sInstance = null;
@@ -152,6 +158,27 @@ public class Context_Service extends Service implements SensorEventListener{
 				extractor = null;
 				break;
 			}
+			case MSG_START_MICROPHONE:{
+				//code
+				break;
+			}
+			case MSG_STOP_MICROPHONE:{
+				//code
+				break;
+			}
+			case MSG_MICROPHONE_STARTED:{
+				//code
+				break;
+			}
+			case MSG_MICROPHONE_STOPPED:{
+				//code
+				break;
+			}
+			case MSG_SPEECH_STATUS:{
+				//code
+				break;
+			}
+				
 
 			default:
 				super.handleMessage(msg);
