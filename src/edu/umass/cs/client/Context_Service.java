@@ -85,6 +85,12 @@ public class Context_Service extends Service implements SensorEventListener{
 	static Context_Service sInstance = null;
 	private static boolean isRunning = false;
 	private static boolean isAccelRunning = false;
+	
+	private Sensor mMicrophone;
+    
+	private RecorderActivity recorder;
+	private MicrophoneRecorder micRecord = new MicrophoneRecorder();
+
 
 	private static final int NOTIFICATION_ID = 777;
 	
@@ -158,28 +164,27 @@ public class Context_Service extends Service implements SensorEventListener{
 				extractor = null;
 				break;
 			}
-			case MSG_START_MICROPHONE:{
+			case MSG_START_MICROPHONE:
+			{
 				//code
+				isMicRunning = true;
+//				for(MicrophoneListener listener : listeners){
+//					listener.microphoneBuffer(buffer,bufferReadResult);
+//				}
+				mSensorManager.registerListener(sInstance, sensors);
+				micRecord.startRecording();
+				sendMessageToUI(MSG_MICROPHONE_STARTED);
+				showNotification();
 				break;
 			}
-			case MSG_STOP_MICROPHONE:{
+			case MSG_STOP_MICROPHONE:
+			{
 				//code
+				isMicRunning = false;
+				sendMessageToUI(MSG_MICROPHONE_STOPPED);
+				showNotification();
 				break;
 			}
-			case MSG_MICROPHONE_STARTED:{
-				//code
-				break;
-			}
-			case MSG_MICROPHONE_STOPPED:{
-				//code
-				break;
-			}
-			case MSG_SPEECH_STATUS:{
-				//code
-				break;
-			}
-				
-
 			default:
 				super.handleMessage(msg);
 			}
