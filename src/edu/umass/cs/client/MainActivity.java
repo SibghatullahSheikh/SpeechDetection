@@ -120,6 +120,26 @@ public class MainActivity extends Activity{
             	}
             	break;
             }
+            case Context_Service.MSG_MICROPHONE_STARTED:
+        	{
+				//code
+        		if(recorder.recordButton!=null){
+        			recorder.recordButton.setChecked(true);
+        			microStarted = true;
+        			statusAudioView.setText("Microphone Started");    			
+        		}
+				break;
+			}
+			case Context_Service.MSG_MICROPHONE_STOPPED:
+			{
+				//code
+				if(recorder.recordButton!=null){
+					recorder.recordButton.setChecked(false);
+					microStarted = false;
+					statusAudioView.setText("Microphone Stopped");
+				}
+				break;
+			}
             default:
                 super.handleMessage(msg);
             }
