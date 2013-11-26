@@ -126,7 +126,12 @@ public class ContextActivity extends ListActivity {
             	}
             	break;
             }
-            default:
+             case Context_Service.MSG_SPEECH_STATUS:
+            {
+				//code
+				break;
+            }
+          
                 super.handleMessage(msg);
             }
         }
