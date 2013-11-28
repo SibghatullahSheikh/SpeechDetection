@@ -67,6 +67,7 @@ public class MicrophoneRecorder extends Thread{
 	public void stopRecording(){
 		if (isRecording){
 			isRecording = false;
+			new MainActivity().sendMessageToService(Context_Service.MSG_STOP_MICROPHONE);
 			instance = null;			
 		}
 	}
@@ -74,6 +75,7 @@ public class MicrophoneRecorder extends Thread{
 	public void startRecording(){
 		if (!isRecording){
 			isRecording = true;
+			new MainActivity().sendMessageToService(Context_Service.MSG_START_MICROPHONE);
 			instance.start();	
 		}
 	}
