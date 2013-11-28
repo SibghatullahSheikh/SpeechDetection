@@ -48,7 +48,7 @@ import android.widget.BaseAdapter;
 public class ContextActivity extends ListActivity {
 	
 	public static enum STREAMS {ACTIVITY
-//									,VOICE
+									,VOICE
 									,ACCX
 									,ACCY
 									,ACCZ
@@ -128,7 +128,15 @@ public class ContextActivity extends ListActivity {
             }
              case Context_Service.MSG_SPEECH_STATUS:
             {
-				//code
+			//code
+            	Log.d(TAG,"got message");
+            	String activity = msg.getData().getString("activity");
+            	Log.d(TAG,"activity:" + activity);
+            	int state = getStateFromActivityString(activity);
+            	if (widgets[STREAMS.ACTIVITY.ordinal()] !=null){
+            		((ContextImageWidget)widgets[STREAMS.ACTIVITY.ordinal()]).history_view.add(state);
+            		((ContextImageWidget)widgets[STREAMS.ACTIVITY.ordinal()]).setImage(state);
+            	}
 				break;
             }
           
