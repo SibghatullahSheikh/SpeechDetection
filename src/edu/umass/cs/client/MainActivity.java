@@ -47,11 +47,19 @@ public class MainActivity extends Activity{
 	 */
 	private boolean accelStarted = false;
 	
+	/** 
+	 * Variable to check if microphone is running
+	 */
+	private boolean microStarted = false;
+	
+	public static int frequency = 8000;
+	
 	/**
 	 * Instance of this activity
 	 */
 	private MainActivity activity;
 	
+	private RecorderActivity recorder = new RecorderActivity();
 	
 	/*
 	 * Various UI components 
