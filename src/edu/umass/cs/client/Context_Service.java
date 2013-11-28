@@ -37,7 +37,7 @@ import edu.umass.cs.accelerometer.StepDetection;
  * @author CS390MB
  * 
  */
-public class Context_Service extends Service implements SensorEventListener{
+public class Context_Service extends Service implements SensorEventListener, MicrophoneListener{
 
 	/**
 	 * Notification manager to display notifications
@@ -61,6 +61,8 @@ public class Context_Service extends Service implements SensorEventListener{
      */
     private Sensor mAccelerometer;
 
+
+    private RecorderActivity recorder;
 	//List of bound clients/activities to this service
 	ArrayList<Messenger> mClients = new ArrayList<Messenger>();
 
@@ -74,8 +76,8 @@ public class Context_Service extends Service implements SensorEventListener{
 	static final int MSG_STOP_ACCELEROMETER = 7;
 	static final int MSG_ACCELEROMETER_STARTED = 8;
 	static final int MSG_ACCELEROMETER_STOPPED = 9;
-	static final int MSG_START_MICROPHONE = 10;
-	static final int MSG_STOP_MICROPHONE = 11;
+	public static final int MSG_START_MICROPHONE = 10;
+	public static final int MSG_STOP_MICROPHONE = 11;
 	static final int MSG_MICROPHONE_STARTED = 12;
 	static final int MSG_MICROPHONE_STOPPED = 13;
 	static final int MSG_SPEECH_STATUS = 14;
@@ -89,9 +91,9 @@ public class Context_Service extends Service implements SensorEventListener{
 	private Sensor mMicrophone;
     
 	private RecorderActivity recorder;
-	private MicrophoneRecorder micRecord = new MicrophoneRecorder();
 
 
+	private int NSAMPLES = 75;
 	private static final int NOTIFICATION_ID = 777;
 	
 	/**
@@ -168,11 +170,8 @@ public class Context_Service extends Service implements SensorEventListener{
 			{
 				//code
 				isMicRunning = true;
-//				for(MicrophoneListener listener : listeners){
-//					listener.microphoneBuffer(buffer,bufferReadResult);
-//				}
-				mSensorManager.registerListener(sInstance, sensors);
-				micRecord.startRecording();
+ 				MicrophoneRecorder.getInstance().registerListener(sInstance);
+				MicrophoneRecorder.getInstance().startRecording();
 				sendMessageToUI(MSG_MICROPHONE_STARTED);
 				showNotification();
 				break;
@@ -181,6 +180,8 @@ public class Context_Service extends Service implements SensorEventListener{
 			{
 				//code
 				isMicRunning = false;
+				MicrophoneRecorder.getInstance().unregisterListener(sInstance);
+				MicrophoneRecorder.getInstance().stopRecording();
 				sendMessageToUI(MSG_MICROPHONE_STOPPED);
 				showNotification();
 				break;
@@ -368,7 +369,11 @@ public class Context_Service extends Service implements SensorEventListener{
 
 	
 	
-	
+	@Override
+	public void microphoneBuffer(short[] buffer, int window_size) {
+		// TODO Auto-generated method stub
+		recorder.microphoneBuffer(buffer, window_size);
+	}
 	
 
 	
